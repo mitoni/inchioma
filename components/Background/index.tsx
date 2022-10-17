@@ -51,7 +51,6 @@ const Background = () => {
       viewBox="0 0 3849 11578"
       vectorEffect="non-scaling-stroke"
       preserveAspectRatio="xMidYMid meet"
-      className="max-w-screen-xl mt-60"
       style={{
         zIndex: -1,
         fill: "none",

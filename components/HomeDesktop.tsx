@@ -19,14 +19,19 @@ const HomeDesktop = () => {
     <>
       <Sidebar />
 
-      <div id="home" className="absolute w-full flex flex-row justify-center">
+      <div
+        id="home"
+        className="absolute top-0 left-0 right-0 flex flex-row justify-center"
+      >
         <a href="#home">
           <Logo className="h-20 my-20" />
         </a>
       </div>
 
-      <div className="w-full flex flex-row justify-center">
-        <Background />
+      <div className="relative block max-w-screen">
+        <div className="relative mx-auto max-w-screen-xl mt-60">
+          <Background />
+        </div>
       </div>
 
       <div className="absolute bottom-0 right-0 left-0">
