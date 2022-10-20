@@ -8,10 +8,10 @@ const Footer = () => {
     <Grid className="sm:mt-20 mt-10 sm:py-10 py-5 border-t border-black">
       <Col className="flex flex-row items-center sm:col-span-3 col-span-12 sm:justify-start justify-center">
         <a>
-          <CiLinkedin className="w-10 h-10 p-1" />
+          <CiLinkedin className="w-16 h-16 p-1" />
         </a>
         <a>
-          <CiInstagram className="w-10 h-10 p-1" />
+          <CiInstagram className="w-16 h-16 p-1" />
         </a>
       </Col>
 

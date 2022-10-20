@@ -15,13 +15,16 @@ const Background = () => {
       targets: pathRef.current,
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "linear",
+      duration: 15000,
       autoplay: false,
     });
 
-    timeline.current.seek(interpolate(lut, 0) * timeline.current.duration);
+    setTimeout(() => timeline.current?.play(), 500);
   }, []);
 
   const handleScroll = useCallback(() => {
+    timeline.current?.pause();
+
     const top = svgRef.current?.clientTop ?? 0;
     const height = svgRef.current?.clientHeight ?? 0;
 
@@ -32,16 +35,16 @@ const Background = () => {
 
     const lerp = interpolate(lut, perc);
 
-    // console.log({ perc, lerp });
+    // console.log({ perc });
 
     timeline.current?.seek(lerp * timeline.current.duration);
   }, []);
 
   useEffect(() => {
-    addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
 

@@ -21,8 +21,9 @@ const TrigStroke = (
     timeline.current = anime({
       targets: pathRef.current,
       strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "linear",
+      easing: "easeInOutSine",
       autoplay: false,
+      duration: 2000,
     });
   }, []);
 
@@ -40,7 +41,7 @@ const TrigStroke = (
   }, []);
 
   return (
-    <Waypoint onEnter={handleEnter} onLeave={handleExit} bottomOffset="20%">
+    <Waypoint onEnter={handleEnter} onLeave={handleExit} bottomOffset="40%">
       <svg
         ref={ref}
         vectorEffect="non-scaling-stroke"

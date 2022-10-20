@@ -50,7 +50,7 @@ const HomeMobile = () => {
       <TrigStroke
         id="tree-climbing"
         viewBox="0 0 2504 3698"
-        className="w-full p-10"
+        className="w-full max-h-1/2-screen p-10"
       >
         <MobileDrawing2 />
       </TrigStroke>
@@ -74,7 +74,7 @@ const HomeMobile = () => {
       <TrigStroke
         id="abbattimento"
         viewBox="0 0 2754 2738"
-        className="w-full p-10"
+        className="w-full max-h-1/2-screen p-10"
       >
         <MobileDrawing4 />
       </TrigStroke>
@@ -88,7 +88,11 @@ const HomeMobile = () => {
         </Span>
       </div>
 
-      <TrigStroke id="vta" viewBox="0 0 3609 1541" className="w-full p-10">
+      <TrigStroke
+        id="vta"
+        viewBox="0 0 3609 1541"
+        className="w-full max-h-1/2-screen p-10"
+      >
         <MobileDrawing5 />
       </TrigStroke>
 
@@ -103,7 +107,7 @@ const HomeMobile = () => {
       <TrigStroke
         id="trattamenti"
         viewBox="0 0 4196 1026"
-        className="w-full p-10"
+        className="w-full max-h-1/2-screen p-10"
       >
         <MobileDrawing6 />
       </TrigStroke>
@@ -119,7 +123,7 @@ const HomeMobile = () => {
       <TrigStroke
         id="consolidamenti"
         viewBox="0 0 3688 1862"
-        className="w-full p-10"
+        className="w-full max-h-1/2-screen p-10"
       >
         <MobileDrawing7 />
       </TrigStroke>
@@ -136,7 +140,7 @@ const HomeMobile = () => {
       <TrigStroke
         id="messa-in-dimora"
         viewBox="0 0 4205 2688"
-        className="w-full p-10"
+        className="w-full max-h-1/2-screen p-10"
       >
         <MobileDrawing8 />
       </TrigStroke>
@@ -159,7 +163,7 @@ const HomeMobile = () => {
         />
       </div>
 
-      <div className="w-full text-center p-10">
+      <div className="w-full p-10">
         <H3>ARBORICOLTURA E TREE CLIMBING</H3>
         <H4>Cosa sono e perché sceglierli</H4>
         <br />

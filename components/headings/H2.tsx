@@ -1,11 +1,18 @@
-import { HTMLAttributes } from "react";
+import { ForwardedRef, forwardRef, HTMLAttributes } from "react";
 
-const H2 = (props: HTMLAttributes<HTMLElement>) => {
+const H2 = (
+  props: HTMLAttributes<HTMLElement>,
+  ref: ForwardedRef<HTMLHeadingElement>
+) => {
   const { className = "", ...rest } = props;
 
   return (
-    <h2 className={`font-light sm:text-4xl text-2xl ${className}`} {...rest} />
+    <h2
+      ref={ref}
+      className={`font-thin sm:text-4xl text-2xl ${className}`}
+      {...rest}
+    />
   );
 };
 
-export default H2;
+export default forwardRef(H2);

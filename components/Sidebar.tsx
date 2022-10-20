@@ -51,18 +51,18 @@ const Sidebar = () => {
 
   return (
     <>
-      <a
+      <div
         className="fixed h-screen right-0 top-0 bottom-0 p-12 z-30 pointer-events-none"
         onClick={handleClick}
       >
-        <span className="pointer-events-auto cursor-pointer">
+        <span className="pointer-events-auto sm:cursor-pointer">
           {isOpen ? (
             <IoCloseOutline className="w-10 h-10 pointer" />
           ) : (
             <IoMenuOutline className="w-10 h-10" />
           )}
         </span>
-      </a>
+      </div>
 
       <div
         className="absolute inset-0 overflow-hidden flex flex-row justify-end z-20 pointer-events-none"
@@ -77,7 +77,7 @@ const Sidebar = () => {
             <LogoText className="mb-10" />
           </a>
 
-          <Link href="#home" className="mb-5 text-xl">
+          <Link href="#who-we-are" className="mb-5 text-xl">
             CHI SIAMO
           </Link>
 

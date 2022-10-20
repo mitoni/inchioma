@@ -13,7 +13,7 @@ const FixedBlock = (
       }}
     >
       <div
-        className={`max-w-xl ${className}`}
+        className={`max-w-xl relative ${className}`}
         style={{ transform: `translateX(${offsetX}px)` }}
         {...rest}
       />

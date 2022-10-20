@@ -1,4 +1,7 @@
+import anime from "animejs";
 import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Anchor from "./Anchor";
 import Background from "./Background";
 import Col from "./Col";
 import FixedBlock from "./FixedBlock";
@@ -15,6 +18,45 @@ import Sidebar from "./Sidebar";
 import TrigStroke from "./TrigStroke";
 
 const HomeDesktop = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const timeline = useRef<anime.AnimeInstance>();
+
+  const hasScrolled = useRef(false);
+
+  useEffect(() => {
+    timeline.current = anime({
+      targets: titleRef.current,
+      opacity: [0, 1],
+      easing: "easeInOutSine",
+      duration: 3000,
+      autoplay: false,
+    });
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!hasScrolled.current) {
+        timeline.current?.play();
+      }
+    }, 3500);
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    timeline.current?.play();
+
+    hasScrolled.current = true;
+
+    window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
     <>
       <Sidebar />
@@ -24,65 +66,68 @@ const HomeDesktop = () => {
         className="absolute top-0 left-0 right-0 flex flex-row justify-center"
       >
         <a href="#home">
-          <Logo className="h-20 my-20" />
+          <Logo className="h-32 my-16" />
         </a>
       </div>
 
       <div className="relative block max-w-screen">
-        <div className="relative mx-auto max-w-screen-xl mt-60">
+        <div className="relative mx-auto max-w-screen-xl mt-64">
           <Background />
         </div>
       </div>
 
       <div className="absolute bottom-0 right-0 left-0">
-        <H2 className="max-w-screen-xl mx-auto text-center mb-20 bg-white">
-          Professionalità e vocazione nei confronti di chi, da sempre, ci
-          permette di respirare
+        <H2
+          ref={titleRef}
+          style={{ opacity: 0 }}
+          className="max-w-screen-xl mx-auto text-center mb-20 bg-white"
+        >
+          <span className="font-medium">Professionalità</span> e{" "}
+          <span className="font-medium">vocazione</span> nei confronti di chi,
+          da sempre, ci permette di{" "}
+          <span className="font-medium">respirare</span>
         </H2>
       </div>
 
-      <FixedBlock id="tree-climbing" offsetY={1125} offsetX={350}>
+      <FixedBlock offsetY={1125} offsetX={350}>
+        <Anchor id="tree-climbing" />
         <H3>TREE CLIMBING</H3>
         <Span>tecnica per intervenire su alberi ad alto fusto</Span>
       </FixedBlock>
 
-      <FixedBlock id="potatura" offsetY={1525} offsetX={50}>
+      <FixedBlock offsetY={1525} offsetX={50}>
+        <Anchor id="potatura" />
         <H3>POTATURA</H3>
         <Span>
           rimonda del secco potatura di diradamento recupero della chioma
         </Span>
       </FixedBlock>
 
-      <FixedBlock
-        id="abbattimento"
-        offsetY={2000}
-        offsetX={-50}
-        className="text-right"
-      >
+      <FixedBlock offsetY={2000} offsetX={-50} className="text-right">
+        <Anchor id="abbattimento" />
         <H3>ABBATTIMENTO</H3>
         <Span>
           abbattimento al piede abbattimento controllato eliminazione ceppaie
         </Span>
       </FixedBlock>
 
-      <FixedBlock id="vta" offsetY={2400} offsetX={200}>
+      <FixedBlock offsetY={2400} offsetX={200}>
+        <Anchor id="vta" />
+
         <H3>VALUTAZIONE DI STABILITÀ</H3>
         <Span>trattamenti ﬁtosanitari miglioramento della rizosfera </Span>
       </FixedBlock>
 
-      <FixedBlock
-        id="trattamenti"
-        offsetY={2800}
-        offsetX={-350}
-        className="text-right"
-      >
+      <FixedBlock offsetY={2800} offsetX={-350} className="text-right">
+        <Anchor id="trattamenti" />
         <H3>SALUTE DELL&apos;ALBERO</H3>
         <Span>
           indagini strumentali attribuzione classe di propensione al cedimento
         </Span>
       </FixedBlock>
 
-      <FixedBlock id="consolidamenti" offsetY={3050} offsetX={300}>
+      <FixedBlock offsetY={3050} offsetX={300}>
+        <Anchor id="consolidamenti" />
         <H3>CONSOLIDAMENTI</H3>
         <Span>
           intervento non invasivo tramite cablaggi dedicati al ﬁne di preservare
@@ -91,12 +136,8 @@ const HomeDesktop = () => {
         </Span>
       </FixedBlock>
 
-      <FixedBlock
-        id="messa-in-dimora"
-        offsetY={3700}
-        offsetX={-300}
-        className="text-right"
-      >
+      <FixedBlock offsetY={3700} offsetX={-300} className="text-right">
+        <Anchor id="messa-in-dimora" />
         <H3>MESSA A DIMORA</H3>
         <Span>
           trapianto di alberi nel pieno rispetto ﬁsiologico scelta della specie
@@ -173,6 +214,7 @@ const HomeDesktop = () => {
         </Col>
 
         <Col className="flex flex-col justify-center p-8">
+          <Anchor id="who-we-are" />
           <H3>STEFANO ZANELLATI</H3>
           <H4>TREE CLIMBER ETW</H4>
           <br />
@@ -191,10 +233,12 @@ const HomeDesktop = () => {
 
       <div className="h-40" />
 
-      <Grid id="contatti">
+      <Grid>
         <Col />
 
         <Col className="flex flex-col items-end text-right">
+          <Anchor id="contatti" />
+
           <TrigStroke viewBox="0 0 1037 800" width={150}>
             <ContactDrawing />
           </TrigStroke>
@@ -244,7 +288,7 @@ const HomeDesktop = () => {
         </Col>
 
         <Col className="text-right">
-          <P>zeneste.leon@pec.it</P>
+          <P>info@inchioma.it</P>
 
           <div className="h-5" />
 
