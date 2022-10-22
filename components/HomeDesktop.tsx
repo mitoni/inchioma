@@ -1,6 +1,4 @@
-import anime from "animejs";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
 import Anchor from "./Anchor";
 import Background from "./Background";
 import Col from "./Col";
@@ -18,45 +16,6 @@ import Sidebar from "./Sidebar";
 import TrigStroke from "./TrigStroke";
 
 const HomeDesktop = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const timeline = useRef<anime.AnimeInstance>();
-
-  const hasScrolled = useRef(false);
-
-  useEffect(() => {
-    timeline.current = anime({
-      targets: titleRef.current,
-      opacity: [0, 1],
-      easing: "easeInOutSine",
-      duration: 3000,
-      autoplay: false,
-    });
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (!hasScrolled.current) {
-        timeline.current?.play();
-      }
-    }, 3500);
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    timeline.current?.play();
-
-    hasScrolled.current = true;
-
-    window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
   return (
     <>
       <Sidebar />
@@ -65,9 +24,7 @@ const HomeDesktop = () => {
         id="home"
         className="absolute top-0 left-0 right-0 flex flex-row justify-center"
       >
-        <a href="#home">
-          <Logo className="h-32 my-16" />
-        </a>
+        <Logo className="h-32 my-16" />
       </div>
 
       <div className="relative block max-w-screen">
@@ -77,11 +34,7 @@ const HomeDesktop = () => {
       </div>
 
       <div className="absolute bottom-0 right-0 left-0">
-        <H2
-          ref={titleRef}
-          style={{ opacity: 0 }}
-          className="max-w-screen-xl mx-auto text-center mb-20 bg-white"
-        >
+        <H2 className="max-w-screen-xl mx-auto text-center mb-20 bg-white">
           <span className="font-medium">Professionalità</span> e{" "}
           <span className="font-medium">vocazione</span> nei confronti di chi,
           da sempre, ci permette di{" "}
@@ -214,7 +167,7 @@ const HomeDesktop = () => {
         </Col>
 
         <Col className="flex flex-col justify-center p-8">
-          <Anchor id="who-we-are" />
+          <Anchor id="chi-siamo" />
           <H3>STEFANO ZANELLATI</H3>
           <H4>TREE CLIMBER ETW</H4>
           <br />

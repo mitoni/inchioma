@@ -7,26 +7,45 @@ import lut from "./lut";
 const Background = () => {
   const pathRef = useRef<SVGPathElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-
-  const timeline = useRef<anime.AnimeInstance>();
+  const fullTimeline = useRef<anime.AnimeInstance>();
+  const heroTimeline = useRef<anime.AnimeInstance>();
+  const hasScrolled = useRef(false);
 
   useEffect(() => {
-    timeline.current = anime({
+    const pathLength = anime.setDashoffset(pathRef.current);
+
+    heroTimeline.current = anime
+      .timeline({
+        easing: "easeInOutSine",
+        autoplay: true,
+      })
+      .add({
+        targets: pathRef.current,
+        strokeDashoffset: [pathLength, pathLength * (1 - 0.22)],
+        duration: 3500,
+      });
+  }, []);
+
+  useEffect(() => {
+    const pathLength = anime.setDashoffset(pathRef.current);
+
+    fullTimeline.current = anime({
       targets: pathRef.current,
-      strokeDashoffset: [anime.setDashoffset, 0],
+      strokeDashoffset: [pathLength, 0],
       easing: "linear",
-      duration: 15000,
       autoplay: false,
     });
-
-    setTimeout(() => timeline.current?.play(), 500);
   }, []);
 
   const handleScroll = useCallback(() => {
-    timeline.current?.pause();
+    if (!!!hasScrolled.current) {
+      heroTimeline.current?.pause();
+    }
 
-    const top = svgRef.current?.clientTop ?? 0;
-    const height = svgRef.current?.clientHeight ?? 0;
+    hasScrolled.current = true;
+
+    const top = svgRef.current?.getBoundingClientRect().top ?? 0;
+    const height = svgRef.current?.getBoundingClientRect().height ?? 0;
 
     const windowHeight = window.innerHeight;
     const scrolled = window.scrollY;
@@ -35,10 +54,8 @@ const Background = () => {
 
     const lerp = interpolate(lut, perc);
 
-    // console.log({ perc });
-
-    timeline.current?.seek(lerp * timeline.current.duration);
-  }, []);
+    fullTimeline.current?.seek(lerp * fullTimeline.current.duration);
+  }, [hasScrolled]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);

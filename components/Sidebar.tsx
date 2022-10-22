@@ -77,7 +77,7 @@ const Sidebar = () => {
             <LogoText className="mb-10" />
           </a>
 
-          <Link href="#who-we-are" className="mb-5 text-xl">
+          <Link href="#chi-siamo" className="mb-5 text-xl">
             CHI SIAMO
           </Link>
 

@@ -27,9 +27,7 @@ const HomeMobile = () => {
         id="home"
         className="absolute top-0 left-0 righ-0 flex flex-row justify-start"
       >
-        <a href="#home">
-          <Logo className="h-12 m-12" />
-        </a>
+        <Logo className="h-12 m-12" />
       </div>
 
       <div className="h-screen w-full text-center p-10">
@@ -41,8 +39,10 @@ const HomeMobile = () => {
 
         <div className="h-1/2 flex flex-col justify-center items-center">
           <H2>
-            Professionalità e vocazione nei confronti di chi, da sempre, ci
-            permette di respirare
+            <span className="font-medium">Professionalità</span> e{" "}
+            <span className="font-medium">vocazione</span> nei confronti di chi,
+            da sempre, ci permette di{" "}
+            <span className="font-medium">respirare</span>
           </H2>
         </div>
       </div>
@@ -163,7 +163,7 @@ const HomeMobile = () => {
         />
       </div>
 
-      <div className="w-full p-10">
+      <div className="w-full text-center p-10">
         <H3>ARBORICOLTURA E TREE CLIMBING</H3>
         <H4>Cosa sono e perché sceglierli</H4>
         <br />
@@ -206,7 +206,7 @@ const HomeMobile = () => {
         </P>
       </div>
 
-      <div className="w-full text-center p-10">
+      <div id="chi-siamo" className="w-full text-center p-10">
         <Image
           width={600}
           height={900}
@@ -232,7 +232,7 @@ const HomeMobile = () => {
         </P>
       </div>
 
-      <div className="w-full text-center p-10">
+      <div id="contatti" className="w-full text-center p-10">
         <div className="w-full flex flex-row justify-center">
           <TrigStroke viewBox="0 0 1037 800" width={150}>
             <ContactDrawing />
