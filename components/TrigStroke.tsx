@@ -28,16 +28,22 @@ const TrigStroke = (
   }, []);
 
   const handleEnter = useCallback(() => {
-    if (timeline.current?.reversed) {
-      timeline.current?.reverse();
+    if (!!!timeline.current) return;
+
+    if (timeline.current.reversed) {
+      timeline.current.reverse();
     }
 
-    timeline.current?.play();
+    timeline.current.duration = 2000;
+
+    timeline.current.play();
   }, []);
 
   const handleExit = useCallback(() => {
-    timeline.current?.reverse();
-    timeline.current?.play();
+    if (!!!timeline.current) return;
+
+    timeline.current.reverse();
+    timeline.current.play();
   }, []);
 
   return (

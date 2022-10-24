@@ -10,7 +10,7 @@ const Col = (
   return (
     <div
       ref={ref}
-      className={twMerge(`w-full col-span-6 row-span-6 ${className}`)}
+      className={twMerge(`w-full col-span-6 row-span-6 p-8 ${className}`)}
       {...rest}
     />
   );

@@ -21,7 +21,7 @@ const Background = () => {
       })
       .add({
         targets: pathRef.current,
-        strokeDashoffset: [pathLength, pathLength * (1 - 0.22)],
+        strokeDashoffset: [pathLength, pathLength * (1 - 0.215)],
         duration: 3500,
       });
   }, []);
@@ -44,15 +44,20 @@ const Background = () => {
 
     hasScrolled.current = true;
 
-    const top = svgRef.current?.getBoundingClientRect().top ?? 0;
-    const height = svgRef.current?.getBoundingClientRect().height ?? 0;
+    const viewportHeight = window.innerHeight;
+    const scrollTop = window.scrollY;
+    const elementHeight = svgRef.current?.getBoundingClientRect().height ?? 0;
+    const elementTop =
+      window.pageYOffset + (svgRef.current?.getBoundingClientRect().top ?? 0);
 
-    const windowHeight = window.innerHeight;
-    const scrolled = window.scrollY;
+    const percentage =
+      (scrollTop + viewportHeight / 2) / (elementHeight + elementTop);
 
-    const perc = (scrolled + windowHeight / 2) / (top + height);
+    const lerp = interpolate(lut, percentage);
 
-    const lerp = interpolate(lut, perc);
+    if (process.env.NODE_ENV === "development") {
+      console.log({ percentage, lerp });
+    }
 
     fullTimeline.current?.seek(lerp * fullTimeline.current.duration);
   }, [hasScrolled]);

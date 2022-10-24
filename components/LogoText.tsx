@@ -11,7 +11,7 @@ const LogoText = (props: HTMLAttributes<HTMLDivElement>) => {
       )}
       {...rest}
     >
-      <span className="text-7xl">IC</span>
+      <span className="font-medium text-7xl">IC</span>
       <span className="text-xs">IN CHIOMA</span>
     </div>
   );
