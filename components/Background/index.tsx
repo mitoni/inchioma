@@ -21,7 +21,7 @@ const Background = () => {
       })
       .add({
         targets: pathRef.current,
-        strokeDashoffset: [pathLength, pathLength * (1 - 0.215)],
+        strokeDashoffset: [pathLength, pathLength * (1 - lut[0].y)],
         duration: 3500,
       });
   }, []);
@@ -69,6 +69,14 @@ const Background = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
     <svg

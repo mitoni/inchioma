@@ -1,8 +1,19 @@
 import { HTMLAttributes } from "react";
 
-const Anchor = (props: HTMLAttributes<HTMLDivElement>) => {
+const Anchor = (
+  props: HTMLAttributes<HTMLDivElement> & { offsetY?: number }
+) => {
+  const { offsetY = 50, ...rest } = props;
+
   return (
-    <div style={{ top: "50%", transform: "translateY(-50vh)" }} {...props} />
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        transform: `translateY(-${offsetY}vh)`,
+      }}
+      {...rest}
+    />
   );
 };
 

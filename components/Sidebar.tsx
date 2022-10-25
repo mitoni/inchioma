@@ -59,7 +59,7 @@ const Sidebar = () => {
           {isOpen ? (
             <IoCloseOutline className="w-10 h-10 pointer" />
           ) : (
-            <IoMenuOutline className="w-10 h-10" />
+            <IoMenuOutline className="w-10 h-10 pointer" />
           )}
         </span>
       </div>

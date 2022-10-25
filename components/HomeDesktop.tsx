@@ -29,7 +29,7 @@ const HomeDesktop = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 left-0">{home.hero}</div>
+      <div className="absolute bottom-0 right-0 left-0 mb-20">{home.hero}</div>
 
       <FixedBlock offsetY={1125} offsetX={350}>
         <Anchor id="tree-climbing" />
@@ -95,9 +95,11 @@ const HomeDesktop = () => {
           />
         </Col>
 
-        <Col className="flex flex-col justify-center ">
-          <Anchor id="chi-siamo" />
-          {home.chi_siamo}
+        <Col className="flex flex-col justify-center">
+          <div className="relative">
+            <Anchor id="chi-siamo" offsetY={50} />
+            {home.chi_siamo}
+          </div>
         </Col>
       </Grid>
 
@@ -107,7 +109,7 @@ const HomeDesktop = () => {
         <Col className="flex flex-col justify-end">{home.legal}</Col>
 
         <Col className="flex flex-col justify-end items-end text-right">
-          <Anchor id="contatti" />
+          <Anchor id="contatti" offsetY={10} />
 
           <TrigStroke viewBox="0 0 1037 800" width={150}>
             <ContactDrawing />

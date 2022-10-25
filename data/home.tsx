@@ -7,7 +7,7 @@ import Strong from "../components/headings/Strong";
 
 const home = {
   hero: (
-    <H2 className="max-w-screen-xl mx-auto text-center mb-20 bg-white">
+    <H2 className="max-w-screen-xl mx-auto text-center   bg-white">
       <span className="font-medium">Professionalità</span> e{" "}
       <span className="font-medium">vocazione</span> nei confronti di chi, da
       sempre, ci permette di <span className="font-medium">respirare</span>

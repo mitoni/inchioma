@@ -47,7 +47,7 @@ const TrigStroke = (
   }, []);
 
   return (
-    <Waypoint onEnter={handleEnter} onLeave={handleExit} bottomOffset="40%">
+    <Waypoint onEnter={handleEnter} onLeave={handleExit} bottomOffset="30%">
       <svg
         ref={ref}
         vectorEffect="non-scaling-stroke"
