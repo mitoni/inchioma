@@ -55,7 +55,7 @@ const TrigStroke = (
           zIndex: -1,
           fill: "none",
           stroke: "currentColor",
-          strokeWidth: 5,
+          strokeWidth: 8,
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: 10,

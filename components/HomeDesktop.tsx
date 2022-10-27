@@ -24,44 +24,44 @@ const HomeDesktop = () => {
       </div>
 
       <div className="relative block max-w-screen">
-        <div className="relative mx-auto max-w-screen-xl mt-64">
+        <div className="relative mx-auto max-w-screen-xl mt-72">
           <Background />
         </div>
       </div>
 
       <div className="absolute bottom-0 right-0 left-0 mb-20">{home.hero}</div>
 
-      <FixedBlock offsetY={1125} offsetX={350}>
+      <FixedBlock offsetY={1400} offsetX={350}>
         <Anchor id="tree-climbing" />
         {home.tree_climbing}
       </FixedBlock>
 
-      <FixedBlock offsetY={1525} offsetX={50}>
+      <FixedBlock offsetY={1825} offsetX={50}>
         <Anchor id="potatura" />
         {home.potatura}
       </FixedBlock>
 
-      <FixedBlock offsetY={2000} offsetX={-50} className="text-right">
+      <FixedBlock offsetY={2350} offsetX={50} className="text-right">
         <Anchor id="abbattimento" />
         {home.abbattimento}
       </FixedBlock>
 
-      <FixedBlock offsetY={2400} offsetX={200}>
+      <FixedBlock offsetY={2800} offsetX={100}>
         <Anchor id="vta" />
         {home.vta}
       </FixedBlock>
 
-      <FixedBlock offsetY={2800} offsetX={-350} className="text-right">
+      <FixedBlock offsetY={3250} offsetX={-300} className="text-right">
         <Anchor id="trattamenti" />
         {home.trattamenti}
       </FixedBlock>
 
-      <FixedBlock offsetY={3050} offsetX={300}>
+      <FixedBlock offsetY={3525} offsetX={200}>
         <Anchor id="consolidamenti" />
         {home.consolidamenti}
       </FixedBlock>
 
-      <FixedBlock offsetY={3700} offsetX={-300} className="text-right">
+      <FixedBlock offsetY={4000} offsetX={-50} className="text-right">
         <Anchor id="messa-in-dimora" />
         {home.messa_a_dimora}
       </FixedBlock>

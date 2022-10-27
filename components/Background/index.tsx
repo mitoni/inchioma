@@ -26,24 +26,7 @@ const Background = () => {
       });
   }, []);
 
-  useEffect(() => {
-    const pathLength = anime.setDashoffset(pathRef.current);
-
-    fullTimeline.current = anime({
-      targets: pathRef.current,
-      strokeDashoffset: [pathLength, 0],
-      easing: "linear",
-      autoplay: false,
-    });
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    if (!!!hasScrolled.current) {
-      heroTimeline.current?.pause();
-    }
-
-    hasScrolled.current = true;
-
+  function getPercentage() {
     const viewportHeight = window.innerHeight;
     const scrollTop = window.scrollY;
     const elementHeight = svgRef.current?.getBoundingClientRect().height ?? 0;
@@ -52,6 +35,18 @@ const Background = () => {
 
     const percentage =
       (scrollTop + viewportHeight / 2) / (elementHeight + elementTop);
+
+    return percentage;
+  }
+
+  const handleScroll = useCallback(() => {
+    if (!!!hasScrolled.current) {
+      heroTimeline.current?.pause();
+    }
+
+    hasScrolled.current = true;
+
+    const percentage = getPercentage();
 
     const lerp = interpolate(lut, percentage);
 
@@ -76,19 +71,30 @@ const Background = () => {
     return () => {
       window.removeEventListener("resize", handleScroll);
     };
+  }, [handleScroll]);
+
+  useEffect(() => {
+    const pathLength = anime.setDashoffset(pathRef.current);
+
+    fullTimeline.current = anime({
+      targets: pathRef.current,
+      strokeDashoffset: [pathLength, 0],
+      easing: "linear",
+      autoplay: false,
+    });
   }, []);
 
   return (
     <svg
       ref={svgRef}
-      viewBox="0 0 3849 11578"
+      viewBox="0 0 1802 5848"
       vectorEffect="non-scaling-stroke"
       preserveAspectRatio="xMidYMid meet"
       style={{
         zIndex: -1,
         fill: "none",
         stroke: "currentColor",
-        strokeWidth: 3,
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeMiterlimit: 10,

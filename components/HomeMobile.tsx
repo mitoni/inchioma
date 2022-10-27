@@ -24,25 +24,22 @@ const HomeMobile = () => {
         id="home"
         className="absolute top-0 left-0 righ-0 flex flex-row justify-start"
       >
-        <Logo className="h-12 m-12" />
+        <Logo className="h-20 m-12" />
       </div>
 
-      <SplitScreen
-        screen1={
+      <div className="h-screen p-10">
+        <div className="h-2/3 flex flex-col justify-end pb-5">
           <TrigStroke viewBox="0 0 4184 2982" className="w-full">
             <MobileDrawing1 />
           </TrigStroke>
-        }
-        screen2={home.hero}
-      />
+        </div>
+        <div className="h-1/3">{home.hero}</div>
+      </div>
 
       <SplitScreen
         id="tree-climbing"
         screen1={
-          <TrigStroke
-            viewBox="0 0 2504 3698"
-            className="w-full max-h-1/2-screen p-10"
-          >
+          <TrigStroke viewBox="0 0 1853 2820">
             <MobileDrawing2 />
           </TrigStroke>
         }
@@ -52,7 +49,7 @@ const HomeMobile = () => {
       <SplitScreen
         id="potatura"
         screen1={
-          <TrigStroke viewBox="0 0 3603 1783" className="w-full p-10">
+          <TrigStroke viewBox="0 0 4145 2059">
             <MobileDrawing3 />
           </TrigStroke>
         }
@@ -62,10 +59,7 @@ const HomeMobile = () => {
       <SplitScreen
         id="abbattimento"
         screen1={
-          <TrigStroke
-            viewBox="0 0 2754 2738"
-            className="w-full max-h-1/2-screen p-10"
-          >
+          <TrigStroke className="px-10" viewBox="0 0 1962 1852">
             <MobileDrawing4 />
           </TrigStroke>
         }
@@ -75,10 +69,7 @@ const HomeMobile = () => {
       <SplitScreen
         id="vta"
         screen1={
-          <TrigStroke
-            viewBox="0 0 3609 1541"
-            className="w-full max-h-1/2-screen p-10"
-          >
+          <TrigStroke className="px-5" viewBox="0 0 2257 1370">
             <MobileDrawing5 />
           </TrigStroke>
         }
@@ -88,10 +79,7 @@ const HomeMobile = () => {
       <SplitScreen
         id="trattamenti"
         screen1={
-          <TrigStroke
-            viewBox="0 0 4196 1026"
-            className="w-full max-h-1/2-screen p-10"
-          >
+          <TrigStroke viewBox="0 0 3186 1026">
             <MobileDrawing6 />
           </TrigStroke>
         }
@@ -101,10 +89,7 @@ const HomeMobile = () => {
       <SplitScreen
         id="consolidamenti"
         screen1={
-          <TrigStroke
-            viewBox="0 0 3688 1862"
-            className="w-full max-h-1/2-screen p-10"
-          >
+          <TrigStroke viewBox="0 0 3388 1975">
             <MobileDrawing7 />
           </TrigStroke>
         }
@@ -114,10 +99,7 @@ const HomeMobile = () => {
       <SplitScreen
         id="messa-in-dimora"
         screen1={
-          <TrigStroke
-            viewBox="0 0 4205 2688"
-            className="w-full max-h-1/2-screen p-10"
-          >
+          <TrigStroke viewBox="0 0 4385 3202">
             <MobileDrawing8 />
           </TrigStroke>
         }

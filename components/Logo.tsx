@@ -3,7 +3,7 @@ import { SVGProps, Ref, forwardRef } from "react";
 
 const Logo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
-    viewBox="0 0 686 903"
+    viewBox="0 0 700 903"
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     style={{
