@@ -4,10 +4,14 @@ import { useEffect, useState } from "react";
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
+  const [windowSize, setWindowSize] = useState<{
+    width: number | null;
+    height: number | null;
+  }>({
+    width: null,
+    height: null,
   });
+
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
@@ -24,6 +28,7 @@ function useWindowSize() {
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty array ensures that effect is only run on mount
+
   return windowSize;
 }
 
