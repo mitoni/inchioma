@@ -7,24 +7,11 @@ import lut from "./lut";
 const Background = () => {
   const pathRef = useRef<SVGPathElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
+
   const fullTimeline = useRef<anime.AnimeInstance>();
   const heroTimeline = useRef<anime.AnimeInstance>();
+
   const hasScrolled = useRef(false);
-
-  useEffect(() => {
-    const pathLength = anime.setDashoffset(pathRef.current);
-
-    heroTimeline.current = anime
-      .timeline({
-        easing: "easeInOutSine",
-        autoplay: true,
-      })
-      .add({
-        targets: pathRef.current,
-        strokeDashoffset: [pathLength, pathLength * (1 - lut[0].y)],
-        duration: 3500,
-      });
-  }, []);
 
   function getPercentage() {
     const viewportHeight = window.innerHeight;
@@ -54,7 +41,9 @@ const Background = () => {
       console.log({ percentage, lerp });
     }
 
-    fullTimeline.current?.seek(lerp * fullTimeline.current.duration);
+    const to = lerp * (fullTimeline.current?.duration ?? 1);
+
+    fullTimeline.current?.seek(to);
   }, [hasScrolled]);
 
   useEffect(() => {
@@ -82,6 +71,21 @@ const Background = () => {
       easing: "linear",
       autoplay: false,
     });
+  }, []);
+
+  useEffect(() => {
+    const pathLength = anime.setDashoffset(pathRef.current);
+
+    heroTimeline.current = anime
+      .timeline({
+        easing: "easeInOutSine",
+        autoplay: true,
+      })
+      .add({
+        targets: pathRef.current,
+        strokeDashoffset: [pathLength, pathLength * (1 - lut[0].y)],
+        duration: 3500,
+      });
   }, []);
 
   return (

@@ -23,7 +23,7 @@ const TrigStroke = (
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "easeInOutSine",
       autoplay: false,
-      duration: 2000,
+      duration: 10000,
     });
   }, []);
 
@@ -34,7 +34,7 @@ const TrigStroke = (
       timeline.current.reverse();
     }
 
-    timeline.current.duration = 2000;
+    timeline.current.duration = 10000;
 
     timeline.current.play();
   }, []);
@@ -50,12 +50,11 @@ const TrigStroke = (
     <Waypoint onEnter={handleEnter} onLeave={handleExit} bottomOffset="30%">
       <svg
         ref={ref}
-        vectorEffect="non-scaling-stroke"
         style={{
           zIndex: -1,
           fill: "none",
           stroke: "currentColor",
-          strokeWidth: 8,
+          strokeWidth: 1,
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: 10,
@@ -63,8 +62,11 @@ const TrigStroke = (
         {...rest}
       >
         {React.isValidElement(children)
-          ? // @ts-ignore
-            React.cloneElement(children, { ref: pathRef })
+          ? React.cloneElement(children, {
+              // @ts-ignore
+              ref: pathRef,
+              vectorEffect: "non-scaling-stroke",
+            })
           : null}
       </svg>
     </Waypoint>

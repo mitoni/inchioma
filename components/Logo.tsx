@@ -252,9 +252,9 @@ const Logo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       y={167.225}
       style={{
         fontFamily: "Montserrat",
-        fontWeight: 100,
+        fontWeight: 300,
         fontSize: "21.981px",
-        fill: "#1d1d1b",
+        fill: "currentColor",
       }}
       transform="translate(-5003.22 -28.579) scale(5.55556)"
     >

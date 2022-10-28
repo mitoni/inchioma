@@ -1,3 +1,4 @@
+import A from "../components/headings/A";
 import H2 from "../components/headings/H2";
 import H3 from "../components/headings/H3";
 import H4 from "../components/headings/H4";
@@ -167,7 +168,9 @@ const home = {
 
       <div className="h-5" />
 
-      <P>info@inchioma.it</P>
+      <P>
+        <A href="mailto:info@inchioma.it">info@inchioma.it</A>
+      </P>
 
       <div className="h-5" />
 

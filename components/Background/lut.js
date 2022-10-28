@@ -6,12 +6,14 @@ const lut = [
   { x: 0.321, y: 0.2985 },
   // Potatura
   { x: 0.4221, y: 0.3565 },
+  { x: 0.48, y: 0.375 },
   // Abbattimento
   { x: 0.5402, y: 0.5334 },
   // VTA
   { x: 0.6416, y: 0.6454 },
   // Trattamenti
   { x: 0.7402, y: 0.7258 },
+  { x: 0.78, y: 0.74 },
   // Consolidamenti
   { x: 0.8021, y: 0.7925 },
   // Messa in dimora
