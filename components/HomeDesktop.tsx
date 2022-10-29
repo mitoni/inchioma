@@ -24,14 +24,14 @@ const HomeDesktop = () => {
       </div>
 
       <div className="relative block max-w-screen">
-        <div className="relative mx-auto max-w-screen-xl mt-72">
+        <div className="relative mx-auto max-w-screen-xl mt-64">
           <Background />
         </div>
       </div>
 
       <div
-        className="absolute right-0 left-0 mb-20"
-        style={{ top: "min(100%, 900px)" }}
+        className="absolute right-0 left-0 pb-10 -translate-y-full"
+        style={{ top: "min(100%, 975px)" }}
       >
         {home.hero}
       </div>
