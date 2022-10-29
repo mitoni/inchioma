@@ -11,7 +11,7 @@ const Col = (
     <div
       ref={ref}
       className={twMerge(
-        `relative w-full col-span-6 row-span-6 p-8 ${className}`
+        `relative w-full col-span-6 row-span-6 sm:p-8 p-4 ${className}`
       )}
       {...rest}
     />

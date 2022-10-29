@@ -27,8 +27,9 @@ const Background = () => {
   }
 
   const handleScroll = useCallback(() => {
-    if (!!!hasScrolled.current) {
+    if (!!!hasScrolled.current && !!pathRef.current) {
       heroTimeline.current?.pause();
+      pathRef.current.style.transition = "stroke-dashoffset 150ms linear";
     }
 
     hasScrolled.current = true;
