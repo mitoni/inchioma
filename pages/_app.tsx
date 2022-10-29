@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -30,6 +31,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <link rel="manifest" href="/assets/icons/site.webmanifest" />
       </Head>
+
+      <Script type="text/javascript" src="/scripts/iubenda.js" />
+
+      <Script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" />
+
+      <Script
+        type="text/javascript"
+        src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        async
+      />
 
       <Component {...pageProps} />
     </>

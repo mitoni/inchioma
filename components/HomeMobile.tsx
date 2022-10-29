@@ -132,7 +132,7 @@ const HomeMobile = () => {
 
       <div id="contatti" className="w-full text-center p-10">
         <div className="w-full flex flex-row justify-center">
-          <TrigStroke viewBox="0 0 1037 800" width={150}>
+          <TrigStroke viewBox="0 0 778 600" width={150}>
             <ContactDrawing />
           </TrigStroke>
         </div>

@@ -29,7 +29,12 @@ const HomeDesktop = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 left-0 mb-20">{home.hero}</div>
+      <div
+        className="absolute right-0 left-0 mb-20"
+        style={{ top: "min(100%, 900px)" }}
+      >
+        {home.hero}
+      </div>
 
       <FixedBlock offsetY={1400} offsetX={350}>
         <Anchor id="tree-climbing" />
@@ -111,7 +116,7 @@ const HomeDesktop = () => {
         <Col className="flex flex-col justify-end items-end text-right">
           <Anchor id="contatti" offsetY={10} />
 
-          <TrigStroke viewBox="0 0 1037 800" width={150}>
+          <TrigStroke viewBox="0 0 778 600" width={150}>
             <ContactDrawing />
           </TrigStroke>
 
