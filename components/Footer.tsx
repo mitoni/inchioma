@@ -8,7 +8,7 @@ const SocialLinks = () => {
   return (
     <>
       <a
-        href="https://www.linkedin.com/in/stefano-zanellati-7bb88353/"
+        href="https://www.linkedin.com/in/ic-stefano-zanellati-7bb88353/"
         rel="noreferrer"
         target="_blank"
       >

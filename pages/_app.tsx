@@ -9,6 +9,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>IN CHIOMA</title>
 
+        <meta
+          name="description"
+          content="Professionalità e vocazione nei confronti di chi, da sempre, ci permette di respirare"
+        />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
