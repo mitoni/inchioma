@@ -7,10 +7,18 @@ import LogoText from "./LogoText";
 const SocialLinks = () => {
   return (
     <>
-      <a>
+      <a
+        href="https://www.linkedin.com/in/stefano-zanellati-7bb88353/"
+        rel="noreferrer"
+        target="_blank"
+      >
         <CiLinkedin className="w-16 h-16 p-1" />
       </a>
-      <a>
+      <a
+        href="https://www.instagram.com/ic_in_chioma/"
+        rel="noreferrer"
+        target="_blank"
+      >
         <CiInstagram className="w-16 h-16 p-1" />
       </a>
     </>
