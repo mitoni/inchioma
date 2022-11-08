@@ -99,7 +99,7 @@ const home = {
         specie.
       </P>
       <P>
-        In sintesi: <Strong>scienza</Strong> e <Strong>tecnica</Strong> al
+        In sintesi: <Strong>scienza</Strong> e <Strong>tecnica</Strong> al{" "}
         <Strong>servizio</Strong> degli <Strong>alberi</Strong>. Come è ben
         noto, per ogni professione esiste un <Strong>professionista</Strong>,
         che in questo caso è l’arboricoltore, ossia colui che pratica
