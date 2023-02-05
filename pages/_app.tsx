@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <meta
           name="description"
-          content="Professionalità e vocazione nei confronti di chi, da sempre, ci permette di respirare"
+          content="Servizi per la cura degli alberi mediante i principi dell'arbicoltura moderna"
         />
 
         <link
