@@ -14,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Inchioma di Stefano Zanellati. Servizi di arbicoltura, tree climbing. Gravellona lomellina 349 29 62621"
         />
 
+        <meta name="robots" content="noodp,noydir" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
