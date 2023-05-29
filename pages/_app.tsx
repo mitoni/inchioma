@@ -7,7 +7,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>IN CHIOMA</title>
+        <title>
+          IN CHIOMA - Servizi per la cura degli alberi mediante i principi
+          dell&apos;arbicoltura moderna
+        </title>
 
         <meta
           name="description"
