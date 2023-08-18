@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <meta
           name="description"
-          content="Inchioma di Stefano Zanellati. Servizi di arbicoltura, tree climbing. Gravellona lomellina 349 29 62621"
+          content="Inchioma di Stefano Zanellati. Servizi di arboricoltura, tree climbing. Gravellona lomellina 349 29 62621"
         />
 
         <meta
