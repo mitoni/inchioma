@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           dell&apos;arboricoltura moderna
         </title>
 
+
         <meta
           name="description"
           content="Inchioma di Stefano Zanellati. Servizi di arbicoltura, tree climbing. Gravellona lomellina 349 29 62621"
