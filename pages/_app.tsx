@@ -1,9 +1,13 @@
 import type { AppProps } from "next/app";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Script from "next/script";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -61,6 +65,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
 
       <Script src="/scripts/analytics.js" />
+
+      <SpeedInsights route={router.pathname} />
 
       <Component {...pageProps} />
     </>
