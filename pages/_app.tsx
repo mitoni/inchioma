@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-LSM4GR3WQW"
+        src="https://www.googletagmanager.com/gtag/js?id=G-WWCVHX45GT"
       />
 
       <Script src="/scripts/analytics.js" />
